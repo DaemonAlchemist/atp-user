@@ -49,6 +49,12 @@ class Authenticator implements \Zend\ServiceManager\FactoryInterface
 		return isset($session->currentUser);
 	}
 	
+	public function getCurrentUser()
+	{
+		$session = new \Zend\Session\Container('user');
+		return $session->currentUser;
+	}
+	
 	public function login($user)
 	{		
 	}

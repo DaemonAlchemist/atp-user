@@ -58,7 +58,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'ATPUser\Controller\UserController' => 'ATUsere\Controller\UserController'
+            'ATPUser\Controller\UserController' => 'ATPUser\Controller\UserController'
         ),
     ),
     'service_manager' => array(
@@ -66,4 +66,9 @@ return array(
 			'User\Authenticator' => 'ATPUser\Authenticator',
 		),
     ),
+    'view_manager' => array(
+        'template_path_stack' => array(
+            __DIR__ . '/../view',
+        ),
+	),
 );
