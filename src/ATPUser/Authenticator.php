@@ -34,8 +34,10 @@ class Authenticator implements \Zend\ServiceManager\FactoryInterface
 	
 	public function getUser()
 	{
-		$ref = new \ReflectionClass($this->_userClass);
-		return $ref->newInstanceArgs(func_get_args());
+		$class = $this->_userClass;
+		$user = new $class();
+		$user->setServiceLocator($this->getServiceLocator());
+		return $user;
 	}
 	
 	public function get($name)
@@ -56,10 +58,15 @@ class Authenticator implements \Zend\ServiceManager\FactoryInterface
 	}
 	
 	public function login($user)
-	{		
+	{
+		$user->setServiceLocator(null);
+		$session = new \Zend\Session\Container('user');
+		$session->currentUser = $user;
 	}
 	
 	public function logout()
 	{
+		$session = new \Zend\Session\Container('user');
+		unset($session->currentUser);
 	}
 }
