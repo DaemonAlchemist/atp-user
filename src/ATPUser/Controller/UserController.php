@@ -17,7 +17,9 @@ class UserController extends \ATPCore\Controller\AbstractController
 			if($user->validate())
 			{
 				$auth->login($user);
-				$this->redirect()->toRoute('home');
+				
+				$config = $this->get('Config');
+				$this->redirect()->toRoute($config['user']['loginRedirectRoute']);
 			}
 			else
 			{
@@ -28,5 +30,14 @@ class UserController extends \ATPCore\Controller\AbstractController
 		}
 		
 		return $view;
+	}
+	
+	public function logoutAction()
+	{
+		$auth = $this->get('User\Authenticator');
+		$auth->logout();
+		
+		$config = $this->get('Config');
+		$this->redirect()->toRoute($config['user']['logoutRedirectRoute']);
 	}
 }

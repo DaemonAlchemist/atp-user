@@ -10,6 +10,8 @@
 return array(
 	'user' => array(
 		'user_model' => 'ATPUser\Model\User',
+		'loginRedirectRoute' => 'home',
+		'logoutRedirectRoute' => 'home',
 	),
 	'admin' => array(
 		'models' =>array(
