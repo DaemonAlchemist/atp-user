@@ -12,9 +12,9 @@ class UserController extends \ATPCore\Controller\AbstractController
 		{
 			$auth = $this->get('User\Authenticator');
 			$user = $auth->getUser();
-			$user->setFrom($_POST);
+			$user->loadByUsername($this->params()->fromPost('username'));
 		
-			if($user->validate())
+			if($user->validatePassword($this->params()->fromPost('password')))
 			{
 				$auth->login($user);
 				
