@@ -1,0 +1,25 @@
+#user-login-dialog {
+ background: #cccccc;
+ width: 300px;
+ margin: 50px auto;
+}
+#user-login-dialog h2 {
+ background: #aaaaaa;
+ width: 100%;
+ font-weight: bold;
+ padding: 8px;
+}
+#user-login-dialog label {
+ display: none;
+}
+#user-login-dialog input {
+ display: block;
+ width: 100%;
+ border: solid 8px #cccccc;
+ padding: 8px;
+}
+#user-login-dialog input[type=submit] {
+ text-align: center;
+ font-weight: bold;
+ border: solid 1px;
+}

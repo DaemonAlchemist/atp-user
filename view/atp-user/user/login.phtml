@@ -1,6 +1,9 @@
-<div id="login-form" class=" widget ui-widget ui-corner-all border-box">
-	<h2 class="ui-widget-header ui-corner-all">Dashboard Login</h2>
-	<div class="ui-widget-content login-form-content">
+<?php $this->headTitle("Login")?>
+<?php $this->appendCss("/atp-user/css/user.less")?>
+
+<div id="user-login-dialog">
+	<h2>Login</h2>
+	<div class="login-form-content">
 		<?php if(isset($errors)) { ?>
 			<?php foreach($errors as $error) { ?>
 				<div class="error"><?=$error?></div>
