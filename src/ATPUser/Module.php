@@ -10,7 +10,7 @@ class Module extends \ATP\Module
 	public function getInstallDbQueries()
 	{
 		return array(
-			"CREATE TABLE `atp`.`atpusers_users` (
+			"CREATE TABLE `atp`.`atpuser_users` (
 				`id` INT(11) NOT NULL AUTO_INCREMENT,
 				`username` CHAR(32) NULL,
 				`password` CHAR(32) NULL,

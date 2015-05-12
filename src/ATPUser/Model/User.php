@@ -2,8 +2,6 @@
 
 namespace ATPUser\Model;
 
-require_once("Group.php");
-
 class User extends \ATP\ActiveRecord
 {
 	private static $_passwordSalt = "";

@@ -7,7 +7,6 @@ return array(
 		),
 	),
 	'user' => array(
-		'user_model' => 'ATPUser\Model\User',
 		'loginRedirectRoute' => 'home',
 		'logoutRedirectRoute' => 'home',
 	),
@@ -34,9 +33,4 @@ return array(
 			'User\Authenticator' => 'ATPUser\Authenticator',
 		),
     ),
-    'view_manager' => array(
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
-	),
 );
